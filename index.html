@@ -104,7 +104,16 @@
             document.getElementById('quiz').classList.add('hidden');
             document.getElementById('result').classList.remove('hidden');
             document.getElementById('role').innerText = role;
+            updateTwitterShareLink(role);
         }
+
+        function updateTwitterShareLink(role) {
+            let encodedRole = encodeURIComponent(role);
+            let baseTwitterUrl = 'https://twitter.com/intent/tweet?text=Story%20Role%20Quiz%20-%20私の適職は%20';
+            let tweetText = baseTwitterUrl + encodedRole + '%20でした！%20%23StoryRoleQuiz&amp;url=https%3A%2F%2Fexample.com%2Fquiz%2Fstory-role-quiz';
+            document.querySelector('.share-twitter').setAttribute('href', tweetText);
+        }
+
 
         function nextQuestion(currentQuestionId, nextQuestionId) {
             document.getElementById(currentQuestionId).classList.add('hidden');
