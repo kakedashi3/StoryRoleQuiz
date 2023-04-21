@@ -8,6 +8,36 @@
         .hidden {
             display: none;
         }
+         /* Add the following styles */
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Add this line */
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        #quiz, #result {
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            padding: 10px 24px;
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
