@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Role Quiz</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Story Role Quiz</h1>
+    <div id="quiz">
+        <div id="q1" class="question">
+            <p>1. 物語の全体的な構造やキャラクターの発展に関心がありますか？</p>
+            <button onclick="showRole('Story Editor（ストーリーエディター）', 'q2')">Yes</button>
+            <button onclick="nextQuestion('q1', 'q2')">No</button>
+        </div>
+        <div id="q2" class="question hidden">
+            <p>2. 文法やスペルの誤りを見つけるのが得意ですか？</p>
+            <button onclick="showRole('Proofreader（校正者）', 'q3')">Yes</button>
+            <button onclick="nextQuestion('q2', 'q3')">No</button>
+        </div>
+        <div id="q3" class="question hidden">
+            <p>3. 美術やデザインに関心があり、ビジュアルで物語を表現したいですか？</p>
+            <button onclick="showRole('Concept Artist（コンセプトアーティスト）', 'q4')">Yes</button>
+            <button onclick="nextQuestion('q3', 'q4')">No</button>
+        </div>
+        <div id="q4" class="question hidden">
+            <p>4. 登場人物の会話やセリフに自然さをもたらすことに興味がありますか？</p>
+            <button onclick="showRole('Dialogue Specialist（対話のスペシャリスト）', 'q5')">Yes</button>
+            <button onclick="nextQuestion('q4', 'q5')">No</button>
+        </div>
+        <div id="q5" class="question hidden">
+            <p>5. 物語の世界観や設定を緻密に構築することに情熱を持っていますか？</p>
+            <button onclick="showRole('Worldbuilder（ワールドビルダー）', 'q6')">Yes</button>
+            <button onclick="nextQuestion('q5', 'q6')">No</button>
+        </div>
+        <div id="q6" class="question hidden">
+            <p>6. 物語のテーマや背景に関連する情報を調べることが好きですか？</p>
+            <button onclick="showRole('Researcher（リサーチャー）', 'q7')">Yes</button>
+            <button onclick="nextQuestion('q6', 'q7')">No</button>
+        </div>
+        <div id="q7" class="question hidden">
+            <p>7. 物語を広めたり、プロモーション戦略を立案することに関心がありますか？</p>
+            <button onclick="showRole('Marketing Specialist（マーケティングスペシャリスト）', 'q1')">Yes</button>
+            <button onclick="nextQuestion('q7', 'q1')">No</button>
+        </div>
+        <!-- Add other questions in the same manner -->
+    </div>
+    <div id="result" class="hidden">
+        <h2>あなたの適職は.....？</h2>
+        <p id="role"></p>
+        <button onclick="resetQuiz()">Retry Quiz</button>
+    </div>
+
+    <script>
+        function showRole(role, nextQuestionId) {
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('role').innerText = role;
+        }
+
+        function nextQuestion(currentQuestionId, nextQuestionId) {
+            document.getElementById(currentQuestionId).classList.add('hidden');
+            document.getElementById(nextQuestionId).classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('role').innerText = '';
+
+            let questions = document.getElementsByClassName('question');
+            for (let i = 0; i < questions.length; i++) {
+                questions[i].classList.add('hidden');
+            }
+
+            document.getElementById('q1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
