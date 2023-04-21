@@ -38,6 +38,18 @@
         button:hover {
             background-color: #45a049;
         }
+        a.share-twitter {
+            display: inline-block;
+            background-color: #1da1f2;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        a.share-twitter:hover {
+            background-color: #0c8cd7;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +95,9 @@
     <div id="result" class="hidden">
         <h2>あなたの適職は.....？</h2>
         <p id="role"></p>
+        <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Story%20Role%20Quiz%20-%20あなたの適職は？%20%23StoryRoleQuiz&url=https%3A%2F%2Fexample.com%2Fquiz%2Fstory-role-quiz" target="_blank">
+            Share on Twitter
+          </a>
         <button onclick="resetQuiz()">Retry Quiz</button>
     </div>
 
